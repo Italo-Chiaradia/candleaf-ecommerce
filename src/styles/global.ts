@@ -8,7 +8,17 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body, input, button, textarea, select {
-        font-family: 'Poppins', sans-serif
+        font-family: 'Poppins', sans-serif;
+        color: ${({theme}) => theme.black};
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
     }
 
 `
