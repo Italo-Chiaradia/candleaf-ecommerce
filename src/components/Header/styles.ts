@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   background-color: ${({theme}) => theme.white};
