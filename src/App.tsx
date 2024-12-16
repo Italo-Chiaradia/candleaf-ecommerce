@@ -1,7 +1,14 @@
+import { GlobalStyle } from "./styles/global"
+import { defaultTheme } from "./styles/themes/default"
+import { ThemeProvider } from "styled-components"
+
+import { Home } from "./pages/Home"
+
 export function App() {
   return (
-    <>
-      <h1>CandLeaf E-commerce</h1>
-    </>
+    <ThemeProvider theme={defaultTheme}>
+      <Home />
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }

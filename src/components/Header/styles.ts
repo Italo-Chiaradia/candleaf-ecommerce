@@ -1,58 +1,87 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.header`
+  display: flex;
+  flex-direction: column;
+  background-color: ${({theme}) => theme.white};
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 76px;
-    padding: 0 24px;
-    position: relative;
-    border: 1px solid #E5E5E5;
-    background-color: ${({theme}) => theme.white};
-    > div {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-`
+    padding: 16px 24px;
+    border-bottom: 1px solid #E5E5E5;
+  }
+`;
 
 export const Button = styled.button`
-    background-color: inherit;
-    border: none;
-    cursor: pointer;
-    transition: all .2s;
-    
-    > svg {
-        color: ${({theme}) => theme.black}
-    }
-` 
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  
+  svg {
+    color: ${({theme}) => theme.black};
+  }
+  &:hover > svg {
+    color:${({theme}) => theme.green}; /* Amarelo destaque */
+  }
+`;
 
 export const UserCartButtons = styled.div`
-    display: flex;
-    gap: 16px;
-`
+  display: flex;
+  gap: 16px;
+`;
 
-interface NavContainer {
-    menu?: boolean;
+interface NavContainerProps {
+  $menu?: boolean;
 }
 
-export const NavContainer = styled.nav<NavContainer>`
-    position: absolute;
-    top: ${({menu}) => menu? '100%' : '-200%' };
-    left: 0;
-    width: 100%;
+export const NavContainerMobile = styled.nav<NavContainerProps>`
+  width: 100%;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  max-height: ${({ $menu }) => ($menu ? '200px' : '0')};
+
+  ul {
     padding: 24px 64px;
-    transition: all .2s;
-    z-index: -1;
-    ul li + li {
-        margin-top: 16px;
-    }
-    li  a {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    li {
+      text-align: left;
+
+      a {
+        color: ${({theme}) => theme.black};
         font-size: 24px;
+
+        &:hover {
+          color: ${({theme}) => theme.green};
+        }
+      }
     }
-    li  a:hover {
-        color: ${({theme}) => theme.green};
-        text-decoration: underline;
+  }
+`;
+
+export const NavContainerDesktop = styled.nav`
+  ul {
+    display: flex;
+    gap: 6px;
+    li {
+      width: 130px;
+      text-align: center;
+      a {
+        color: ${({theme}) => theme.black};
+        
+        &:hover {
+          color: ${({theme}) => theme.green};
+        }
+      }
     }
-   
-`
+  }
+`;
