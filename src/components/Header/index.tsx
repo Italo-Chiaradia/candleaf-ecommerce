@@ -7,7 +7,6 @@ import { useMediaQuery } from 'react-responsive';
 
 export function Header() {
     const isDesktop = useMediaQuery({query: '(min-width: 1224px)'});
-    console.log(isDesktop);
     const [menuOpen, setMenuOpen] = useState(false);
 
     function handleOpenMenu() {
