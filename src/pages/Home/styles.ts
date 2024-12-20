@@ -65,3 +65,43 @@ export const HeroInnerContainer = styled.div`
     }
     
 `
+
+export const SectionProducts = styled.section`
+    width: 100%;
+    padding: 50px 14px;
+    text-align: center;
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: #0B254B;
+    }
+    p {
+        font-size: 18px;
+        font-weight: 500;
+        color: #5E6E89;
+    }
+    > button {
+        color: ${({theme}) => theme.white};
+        background-color: ${({theme}) => theme.green};
+        padding: 8px 44px;
+        font-size: 21px;
+        font-weight: 500;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 64px;
+        transition: all .2s;
+        &:hover {
+            filter: brightness(.8);
+        }
+    }
+`
+
+export const ProductsContainer = styled.div`
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+`
