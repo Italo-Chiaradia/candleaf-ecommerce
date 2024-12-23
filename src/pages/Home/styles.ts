@@ -149,6 +149,9 @@ export const SectionBenefitsContainer = styled.div`
         grid-area: benefits;
         text-align: center;
     }
+    > div:last-child > ul {
+        text-align: left;
+    }
     > div:last-child > button {
         color: ${({theme}) => theme.white};
         background-color: ${({theme}) => theme.green};
