@@ -1,7 +1,22 @@
 import { Container, ImageWrapper, Footer, TitleContainer, PriceContainer } from './styles'
-import SpicedMint from '../../assets/spiced-mint-mobile.png'
+import SpicedMint from '../../assets/candles/spiced-mint-mobile.png'
 
-export function Product() {
+interface productProps {
+    product: {
+        id: number,
+        title: string,
+        price: string,
+        details: {
+            wax: string,
+            fragrance: string,
+            burningTime: string,
+            dimension: string,
+            weight: string
+        }
+    }
+}
+
+export function Product({product}: productProps) {
     return (
         <Container>
             <ImageWrapper>
@@ -9,10 +24,10 @@ export function Product() {
             </ImageWrapper>
             <Footer>
                 <TitleContainer>
-                    <span>Spiced Mint</span>
+                    <span>{product.title}</span>
                 </TitleContainer>
                 <PriceContainer>
-                    <span>9.99$</span>
+                    <span>{product.price}</span>
                 </PriceContainer>
             </Footer>
         </Container>

@@ -18,7 +18,15 @@ export const ImageWrapper = styled.div`
     width: 100%;
     height: 98px;
     background-color: #F7F8FA;
-
+    @media (min-width: 1224px) {
+        max-width: 255px;
+        height: 154px;
+        img {
+            width: 100%;
+            height: auto;
+            margin-top: 25px;
+        }
+    }
 `
 
 export const Footer = styled.footer`
@@ -28,6 +36,10 @@ export const Footer = styled.footer`
     justify-content: center;
     height: 61px;
     background-color: ${({theme}) => theme.white};
+    @media (min-width: 1224px) {
+        max-width: 255px;
+        height: 76px;
+    }
 `
 
 export const TitleContainer = styled.div`
