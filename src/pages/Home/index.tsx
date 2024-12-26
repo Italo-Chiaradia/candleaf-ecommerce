@@ -13,6 +13,7 @@ import {
     SectionPopularProductsContainer
 } from './styles'
 
+import { Button } from '../../components/Button'
 import { Header } from '../../components/Header'
 import { Product } from '../../components/Product'
 import { useState } from 'react'
@@ -27,6 +28,7 @@ import BgImage from '../../assets/bg-image.png'
 import BgImageDesktop from '../../assets/bg-image-desktop.png'
 import SectionBenefitsImage from '../../assets/section-benefits.png'
 import SectionBenefitsImageDesktop from '../../assets/section-benefits-desktop.png'
+import { Footer } from '../../components/Footer'
 
 const candles = [
     {
@@ -184,9 +186,9 @@ export function Home() {
                             All hand made with natural soy wax, Candleaf is a companion for all your pleasure moments
                         </p>
                     </div>
-                    <button>
+                    <Button>
                         Discovery our collection
-                    </button>
+                    </Button>
                 </HeroInnerContainer>
             </Hero>
             <SectionProducts>
@@ -209,9 +211,9 @@ export function Home() {
                     }
 
                 </ProductsContainer>
-                <button onClick={toggleProductsView}>
+                <Button onClick={toggleProductsView}>
                     {quantityProducts === candles.length ? 'See less' : 'See more'}
-                </button>
+                </Button>
             </SectionProducts>
             <SectionBenefits>
                 <SectionBenefitsContainer>
@@ -261,9 +263,9 @@ export function Home() {
                                 </span>
                             </li>
                         </ul>
-                        <button>
+                        <Button>
                             Learn more
-                        </button>
+                        </Button>
                     </div>
                 </SectionBenefitsContainer>
             </SectionBenefits>
@@ -341,6 +343,7 @@ export function Home() {
                     </ProductsContainer>
                 </SectionPopularProductsContainer>
             </SectionPopularProducts>
+            <Footer />
         </Container>
     )
 }

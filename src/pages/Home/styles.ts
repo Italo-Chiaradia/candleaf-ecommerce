@@ -45,20 +45,6 @@ export const HeroInnerContainer = styled.div`
         font-size: 17px;
         margin-bottom: 35px;
     }
-    button {
-        max-width: 350px;
-        padding: 8px 44px;
-        font-size: 20px;
-        font-weight: 500;
-        color: ${({theme}) => theme.white};
-        background-color: ${({theme}) => theme.green};
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    button:hover {
-        filter: brightness(.9);
-    }
     h1 > span {
         display: block;
     }
@@ -69,7 +55,8 @@ export const HeroInnerContainer = styled.div`
 `
 
 export const SectionProducts = styled.section`
-    width: 100%;
+    max-width: 1111px;
+    margin: 0 auto;
     padding: 50px 14px;
     text-align: center;
     h2 {
@@ -84,23 +71,7 @@ export const SectionProducts = styled.section`
         color: #5E6E89;
     }
     > button {
-        color: ${({theme}) => theme.white};
-        background-color: ${({theme}) => theme.green};
-        padding: 8px 44px;
-        font-size: 21px;
-        font-weight: 500;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
         margin-top: 64px;
-        transition: all .2s;
-        &:hover {
-            filter: brightness(.8);
-        }
-    }
-    @media (min-width: 1224px) {
-        max-width: 1111px;
-        margin: 0 auto;
     }
 `
 
@@ -128,6 +99,8 @@ export const SectionBenefits = styled.section`
 `
 
 export const SectionBenefitsContainer = styled.div`
+    max-width: 1111px;
+    margin: 0 auto;
     display: grid;
     grid-template-areas:
         "header header"
@@ -155,22 +128,8 @@ export const SectionBenefitsContainer = styled.div`
         text-align: left;
     }
     > div:last-child > button {
-        color: ${({theme}) => theme.white};
-        background-color: ${({theme}) => theme.green};
-        padding: 8px 44px;
-        font-size: 21px;
-        font-weight: 500;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
         margin-top: 64px;
-        
-        transition: all .2s;
-        &:hover {
-            filter: brightness(.8);
-        }
     }
-    
     h2 {
         font-size: 40px;
         font-weight: 500;
@@ -193,8 +152,6 @@ export const SectionBenefitsContainer = styled.div`
     }
 
     @media (min-width: 1224px) {
-        max-width: 1111px;
-        margin: 0 auto;
         grid-template-columns: 540px 540px;
         grid-template-areas:
             "header image"
@@ -251,11 +208,13 @@ export const TestimonialsWrapper = styled.div`
 
 export const SectionPopularProducts = styled.section`
     width: 100%;
-    padding: 50px 14px;
+    padding: 50px 14px 100px 14px;
     text-align: center;
 `
 
 export const SectionPopularProductsContainer = styled.div`
+    max-width: 1111px;
+    margin: 0 auto;
     header {
         text-align: center;
         margin-bottom: 47px;
@@ -270,8 +229,5 @@ export const SectionPopularProductsContainer = styled.div`
         font-weight: 500;
         color: #5E6E89;
     }
-    @media (min-width: 1224px) {
-        max-width: 1111px;
-        margin: 0 auto;
-    }
+
 `
