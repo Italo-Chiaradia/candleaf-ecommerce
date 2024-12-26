@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 `
 
 export const Hero = styled.div`
@@ -115,6 +116,7 @@ export const ProductsContainer = styled.div`
     }
 
 `
+
 export const SectionBenefits = styled.section`
     width: 100%;
     padding: 100px 14px;
@@ -211,4 +213,37 @@ export const SectionBenefitsContainer = styled.div`
         }
     }
 
+`
+
+export const SectionTestimonials = styled.section`
+    width: 100%;
+    padding: 100px 0;
+    background-color: rgba(86,178,128, .10);
+
+`
+
+export const SectionTestimonialsContainer = styled.section`
+    > div {
+        text-align: center;
+        margin-bottom: 47px;
+    }
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+        color: #0B254B;
+    }
+    p {
+        font-size: 18px;
+        font-weight: 500;
+        color: #5E6E89;
+    }
+`
+
+export const TestimonialsWrapper = styled.div`
+    @media (min-width: 768px) {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 `

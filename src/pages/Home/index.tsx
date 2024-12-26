@@ -1,13 +1,30 @@
-import { Container, Hero, HeroInnerContainer, SectionProducts, ProductsContainer, SectionBenefits, SectionBenefitsContainer } from './styles'
+import { 
+    Container, 
+    Hero, 
+    HeroInnerContainer, 
+    SectionProducts, 
+    ProductsContainer, 
+    SectionBenefits, 
+    SectionBenefitsContainer,
+    SectionTestimonials,
+    SectionTestimonialsContainer,
+    TestimonialsWrapper
+} from './styles'
+
 import { Header } from '../../components/Header'
 import { Product } from '../../components/Product'
+import { useState } from 'react'
+import { CheckCircle } from '@phosphor-icons/react'
+import { useMediaQuery } from 'react-responsive'
+import { TestimonialCard } from '../../components/TestimonialCard'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+
 import BgImage from '../../assets/bg-image.png'
 import BgImageDesktop from '../../assets/bg-image-desktop.png'
 import SectionBenefitsImage from '../../assets/section-benefits.png'
 import SectionBenefitsImageDesktop from '../../assets/section-benefits-desktop.png'
-import { useState } from 'react'
-import { useMediaQuery } from 'react-responsive'
-import { CheckCircle  } from '@phosphor-icons/react'
 
 const candles = [
     {
@@ -114,6 +131,26 @@ const candles = [
         }
 
     }
+]
+const testimonials = [
+    {   
+        id: 1,
+        name: "Luisa",
+        phrase: "“I love it! No more air fresheners”",
+        rating: 5
+    },
+    {
+        id: 2,
+        name: "Eduardo",
+        phrase: "“Recommended for everyone”",
+        rating: 5
+    },
+    {
+        id: 3,
+        name: "Mart",
+        phrase: "“Looks very natural, the smell is awesome”",
+        rating: 5
+    },
 ]
 
 export function Home() {
@@ -230,6 +267,60 @@ export function Home() {
                     </div>
                 </SectionBenefitsContainer>
             </SectionBenefits>
+            <SectionTestimonials>
+                <SectionTestimonialsContainer>
+                    <div>
+                        <h1>Testimonials</h1>
+                        <p>Some quotes from our happy customers</p>
+                    </div>
+                    <TestimonialsWrapper>
+                        {
+                            !isDesktop ? (
+                                <Swiper
+                                    slidesPerView={1.25}
+                                    spaceBetween={24}
+                                    breakpoints={{
+                                    450: {
+                                        slidesPerView: 1.5,
+                                        spaceBetween: 24,
+                                    },
+                                    500: {
+                                        slidesPerView: 2.25, // Exibe 1 slide por vez
+                                        spaceBetween: 24, // Espaço entre os slides
+                                    },
+                                    685: {
+                                        slidesPerView: 2.5,
+                                        spaceBetween: 24,
+                                    }
+                                    }}
+                                >
+                                    {
+                                        testimonials.map(testimonial => (
+                                            <SwiperSlide key={testimonial.phrase}>
+                                                <TestimonialCard
+                                                    key={testimonial.phrase}
+                                                    data={testimonial}
+                                                />
+                                            </SwiperSlide>
+                                        ))
+                                    }
+                                </Swiper>
+                            ) : (
+                                testimonials.map(testimonial => (
+                                    <TestimonialCard
+                                        key={testimonial.phrase}
+                                        data={testimonial}
+                                    />
+                                
+                                ))
+                            )
+
+                        }
+                    </TestimonialsWrapper>
+                    
+                    
+                </SectionTestimonialsContainer>
+            </SectionTestimonials>
         </Container>
     )
 }
