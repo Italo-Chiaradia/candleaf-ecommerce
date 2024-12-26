@@ -11,12 +11,13 @@ export const Container = styled.header`
   background-color: ${({theme}) => theme.white};
 
   > div {
+    max-width: 1111px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 16px 24px;
-    border-bottom: 1px solid #E5E5E5;
   }
 `;
 
@@ -49,6 +50,7 @@ interface NavContainerProps {
 export const NavContainerMobile = styled.nav<NavContainerProps>`
   width: 100%;
   overflow: hidden;
+  border-top: 1px solid #E5E5E5;
   transition: max-height 0.3s ease-in-out;
   max-height: ${({ $menu }) => ($menu ? '200px' : '0')};
 
