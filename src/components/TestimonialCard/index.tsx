@@ -19,10 +19,10 @@ export function TestimonialCard({data}: TestimonialCardProps) {
             <img src={Avatar} />
             <StarsContainer>
                 {
-                    stars.map((filled) => (
+                    stars.map((filled, index) => (
                         filled ? 
-                            <Star size={18} weight="fill" fill="#56B280" /> :
-                            <Star size={18} weight="thin" fill="#56B280" />
+                            <Star key={index} size={18} weight="fill" fill="#56B280" /> :
+                            <Star key={index} size={18} weight="thin" fill="#56B280" />
                     ))
                 }
             </StarsContainer>
