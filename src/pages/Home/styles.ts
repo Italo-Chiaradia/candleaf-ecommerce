@@ -72,7 +72,7 @@ export const SectionProducts = styled.section`
     width: 100%;
     padding: 50px 14px;
     text-align: center;
-    h1 {
+    h2 {
         font-size: 40px;
         font-weight: 500;
         margin-bottom: 15px;
@@ -134,7 +134,7 @@ export const SectionBenefitsContainer = styled.div`
         "image image"
         "benefits benefits";
     grid-row-gap: 64px;
-    > div:first-child {
+    > header {
         grid-area: header;
         text-align: center;
     }
@@ -171,7 +171,7 @@ export const SectionBenefitsContainer = styled.div`
         }
     }
     
-    h1 {
+    h2 {
         font-size: 40px;
         font-weight: 500;
         color: #1D252C;
@@ -203,7 +203,7 @@ export const SectionBenefitsContainer = styled.div`
         align-items: center;
         grid-column-gap: 38px;
         grid-row-gap: 38px;
-        > div:first-child {
+        > header {
             text-align: left;
         }
         > div:last-child {
@@ -218,21 +218,22 @@ export const SectionBenefitsContainer = styled.div`
 export const SectionTestimonials = styled.section`
     width: 100%;
     padding: 100px 0;
+    text-align: center;
     background-color: rgba(86,178,128, .10);
 
 `
 
 export const SectionTestimonialsContainer = styled.section`
-    > div {
+    header {
         text-align: center;
         margin-bottom: 47px;
     }
-    h1 {
+    header > h2 {
         font-size: 40px;
         font-weight: 500;
         color: #0B254B;
     }
-    p {
+    header > p {
         font-size: 18px;
         font-weight: 500;
         color: #5E6E89;
@@ -245,5 +246,32 @@ export const TestimonialsWrapper = styled.div`
         gap: 32px;
         justify-content: center;
         flex-wrap: wrap;
+    }
+`
+
+export const SectionPopularProducts = styled.section`
+    width: 100%;
+    padding: 50px 14px;
+    text-align: center;
+`
+
+export const SectionPopularProductsContainer = styled.div`
+    header {
+        text-align: center;
+        margin-bottom: 47px;
+    }
+    header > h2 {
+        font-size: 40px;
+        font-weight: 500;
+        color: #0B254B;
+    }
+    header > p {
+        font-size: 18px;
+        font-weight: 500;
+        color: #5E6E89;
+    }
+    @media (min-width: 1224px) {
+        max-width: 1111px;
+        margin: 0 auto;
     }
 `

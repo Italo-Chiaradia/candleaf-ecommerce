@@ -8,7 +8,9 @@ import {
     SectionBenefitsContainer,
     SectionTestimonials,
     SectionTestimonialsContainer,
-    TestimonialsWrapper
+    TestimonialsWrapper,
+    SectionPopularProducts,
+    SectionPopularProductsContainer
 } from './styles'
 
 import { Header } from '../../components/Header'
@@ -189,9 +191,7 @@ export function Home() {
             </Hero>
             <SectionProducts>
                 <header>
-                    <h1>
-                        Products
-                    </h1>
+                    <h2>Products</h2>
                     <p>
                         Order it for you or for your beloved ones 
                     </p>
@@ -209,16 +209,16 @@ export function Home() {
                     }
 
                 </ProductsContainer>
-                    <button onClick={toggleProductsView}>
-                        {quantityProducts === candles.length ? 'See less' : 'See more'}
-                    </button>
+                <button onClick={toggleProductsView}>
+                    {quantityProducts === candles.length ? 'See less' : 'See more'}
+                </button>
             </SectionProducts>
             <SectionBenefits>
                 <SectionBenefitsContainer>
-                    <div>
-                        <h1>Clean and fragrant soy wax</h1>
+                    <header>
+                        <h2>Clean and fragrant soy wax</h2>
                         <p>Made for your home and for your wellness</p>
-                    </div>
+                    </header>
                     {
                         !isDesktop?(
                             <img src={SectionBenefitsImage} />
@@ -269,10 +269,10 @@ export function Home() {
             </SectionBenefits>
             <SectionTestimonials>
                 <SectionTestimonialsContainer>
-                    <div>
-                        <h1>Testimonials</h1>
+                    <header>
+                        <h2>Testimonials</h2>
                         <p>Some quotes from our happy customers</p>
-                    </div>
+                    </header>
                     <TestimonialsWrapper>
                         {
                             !isDesktop ? (
@@ -321,6 +321,26 @@ export function Home() {
                     
                 </SectionTestimonialsContainer>
             </SectionTestimonials>
+            <SectionPopularProducts>
+                <SectionPopularProductsContainer>
+                    <header>
+                        <h2>Popular</h2>
+                        <p>Our top selling product that you may like</p>
+                    </header>
+                    <ProductsContainer>
+                        {
+                            candles.slice(0, 4).map(candle => {
+                                return (
+                                    <Product
+                                        key={candle.title}
+                                        product={candle}
+                                    />
+                                )
+                            })
+                        }
+                    </ProductsContainer>
+                </SectionPopularProductsContainer>
+            </SectionPopularProducts>
         </Container>
     )
 }
